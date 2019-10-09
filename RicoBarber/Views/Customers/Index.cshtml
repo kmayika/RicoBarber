@@ -1,0 +1,17 @@
+﻿@model RicoBarber.ViewModels.CustomerViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer List</h2>
+<ul>
+    @foreach (var cust in Model.Customer)
+    {
+        <li>
+            @Html.ActionLink(cust.CustomerName, "Details" , new { id = cust.CustomerId})
+        </li>
+    }
+</ul>
+

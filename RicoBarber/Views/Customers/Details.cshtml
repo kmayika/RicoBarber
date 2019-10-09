@@ -1,0 +1,59 @@
+﻿@model  RicoBarber.ViewModels.CustomerViewModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="font-family:Arial">
+    <h2>Customer Details</h2>
+
+    @if (Model.Customer.Count <= 0)
+    {
+        <p>There are no customers</p>
+    }
+    else
+    {
+        foreach (var cust in Model.Customer)
+        {
+            <table>
+                <tr>
+                    <td>
+                        <b>Customer ID : </b>
+                    </td>
+                    <td>
+                        @cust.CustomerId
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Name :</b>
+                    </td>
+                    <td>
+                        @cust.CustomerName
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Gender :</b>
+                    </td>
+                    <td>
+                        @cust.CustomerGender
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Date Created</b>
+                    </td>
+                    <td>
+                        @cust.DateCreated
+                    </td>
+                </tr>
+            </table>
+            @Html.ActionLink("Back to list", "Index")
+        }
+
+    }
+
+
+</div>
+
