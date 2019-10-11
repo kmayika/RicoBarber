@@ -49,7 +49,7 @@
                     </td>
                 </tr>
             </table>
-            @Html.ActionLink("Back to list", "Index")
+            @Html.ActionLink("Back to list", "Index", new { hairstyleId = cust.CustomerId }, null)
         }
 
     }

@@ -1,0 +1,16 @@
+﻿@using RicoBarber.Models;
+@model IEnumerable<HairstylesModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Hairstyle Orders</h2>
+<ul>
+    @foreach(HairstylesModel hairstyleList in Model)
+    {
+        <li>@Html.ActionLink(hairstyleList.HairstyleName, "Index", "Customers", new { hairstyleId = hairstyleList.Id}, null)</li>
+    }
+</ul>
+

@@ -5,16 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BusinessLayer;
 
 namespace RicoBarber.Controllers
 {
     public class CustomersController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(int hairstyleId)
         {
             CustomerContext custDetailsContext = new CustomerContext();
-            var custDetails = (from a in custDetailsContext.Customers
-                               select a).ToList();
+            var custDetails = custDetailsContext.Customers.Where(cust => cust.HairstyleId == hairstyleId).ToList();
 
             var custViewModel = new CustomerViewModel
             {
@@ -36,6 +36,16 @@ namespace RicoBarber.Controllers
                 Customer = custDetails
             };
             return View(custViewModel);
+        }
+
+        public ActionResult GetAllCustomers()
+        {
+            BusinessLayer.Customers getCustomers = new BusinessLayer.Customers();
+            var customers = getCustomers.Customer.ToList();
+
+
+
+            return View(customers);
         }
     }
 }

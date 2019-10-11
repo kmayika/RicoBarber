@@ -10,6 +10,7 @@ namespace RicoBarber.Models
     {
         //table
         public DbSet<Customers> Customers { get; set; }
+        public DbSet<HairstylesModel> Hairstyles { get; set; }
     }
             
 }

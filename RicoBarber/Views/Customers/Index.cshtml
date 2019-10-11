@@ -10,8 +10,12 @@
     @foreach (var cust in Model.Customer)
     {
         <li>
-            @Html.ActionLink(cust.CustomerName, "Details" , new { id = cust.CustomerId})
+            @Html.ActionLink(cust.CustomerName, "Details", new { id = cust.CustomerId })
+
         </li>
     }
+
 </ul>
+
+<p>@Html.ActionLink("Back to hairstyle list", "Index", "Hairstyles")</p>
 

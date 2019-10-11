@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace RicoBarber.Models
+namespace BusinessLayer
 {
-    [Table("dbo.BarberCustomers")]
-    public class Customers
+    public class CustomersModel
     {
-        [Key]
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }
         public string CustomerGender { get; set; }
